@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="e76419fc-ff5e-45f0-a7f1-1fd187ebe69a" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Test Case 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e76419fc-ff5e-45f0-a7f1-1fd187ebe69afileName">Test-Case-1</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request" id="8bbac617-ea9c-46ae-895c-6309a209f5a7">
+    <con:settings/>
+    <con:config service="Simple Banking API V2" resourcePath="/MConneely/Banking-API/2.0.0/accounts" methodName="addaccounts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="773a2ded-8a18-4244-8bda-916f86cfaede" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+        <con:request>{\r
+   "id" : "d290f1ee-6c54-4b01-90e6-d701748f0851",\r
+   "name" : "Joe Blogg",\r
+   "createdDate" : "2016-08-29T09:12:33.001Z",\r
+   "accountType" : {\r
+      "name" : "Personal",\r
+      "homePage" : "https://www.personal-banking.com",\r
+      "phone" : "408-867-5309"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://virtserver.swaggerhub.com/MConneely/Banking-API/2.0.0/accounts</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="011f605c-1842-43ba-869b-df2c76bed889" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="5768c32b-8f4b-46f6-a185-350511d5b0b9" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request 2" id="a0d533c1-7202-4918-b8f8-245b976aca3a">
+    <con:settings/>
+    <con:config service="Simple Banking API V2" resourcePath="/MConneely/Banking-API/2.0.0/accounts" methodName="searchaccounts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request 2" id="91254b30-b2c7-42f5-95e5-4f2009284cf2" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://virtserver.swaggerhub.com/MConneely/Banking-API/2.0.0/accounts</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5d124174-aab7-494a-99b2-1aa50691cb14" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="60750419-2be4-4032-b1be-886696afc17e" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
