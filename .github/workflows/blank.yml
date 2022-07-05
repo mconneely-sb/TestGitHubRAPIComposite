@@ -30,6 +30,6 @@ jobs:
         run: wget https://dl.eviware.com/ready-api/3.40.1/ReadyAPI-x64-3.40.1.sh -o ~/ReadyAPI-x64-3.40.1.sh
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: chmod +x ./ReadyAPI-x64-3.40.1.sh
-      - name: Run a multi-line script
-        run: ./ReadyAPI-x64-3.40.1.0.sh -c
+        run: ls
+      #- name: Run a multi-line script
+      # run: ./ReadyAPI-x64-3.40.1.0.sh -c
