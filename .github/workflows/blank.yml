@@ -32,4 +32,4 @@ jobs:
       - name: Run a multi-line script
         run: ls
       - name: Run a multi-line script
-        run: chomd +x ./ReadyAPI-x64-3.40.1.0.sh
+        run: /bin/chomd +x ./ReadyAPI-x64-3.40.1.0.sh
