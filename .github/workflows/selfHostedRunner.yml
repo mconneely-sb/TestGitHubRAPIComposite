@@ -1,1 +1,10 @@
-# This is a basic workflow to help you get started with Actions
+on: [push]
+
+name: self-hosted-example
+
+jobs:
+  simpleExample:
+    runs-on: self-hosted
+    steps:
+    # checkout branch
+    - uses: actions/checkout@main
