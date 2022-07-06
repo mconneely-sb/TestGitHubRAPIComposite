@@ -15,11 +15,11 @@ jobs:
     - name: Get Install ReadyAPI
       run: echo "install ReadyAPI"
     
-    - name: Test 1
-      working-directory: C:\Work
-      run: ./rapi-test.bat
+   # - name: Test 1
+   #   working-directory: C:\Work
+   #   run: ./rapi-test.bat
       
     - name: Test 2
-      working-directory: C:\"Program Files"\SmartBear\ReadyAPI-3.40.1\bin\
-      run: ./testrunner.bat -r -a -j -f${WORKSPACE} "-RJUnit-Style HTML Report" -FXML "-EDefault environment" "C:\Work\CalcSoap-readyapi-project.xml"
+      working-directory: C:\Program Files\SmartBear\ReadyAPI-3.40.1\bin\
+      run: testrunner.bat -r -a -j -f${WORKSPACE} "-RJUnit-Style HTML Report" -FXML "-EDefault environment" "C:\Work\CalcSoap-readyapi-project.xml"
 
