@@ -16,5 +16,6 @@ jobs:
       run: echo "install ReadyAPI"
     
     - name: Test
-      run: call  C:\Program Files\SmartBear\ReadyAPI-3.40.1\bin\testrunner.bat -r -a -j -f${WORKSPACE} "-RJUnit-Style HTML Report" -FXML "-EDefault environment" "C:\Work\CalcSoap-readyapi-project.xml"
+      working-directory: C:\Work
+      run: ./rapi-test.bat
 
