@@ -9,8 +9,8 @@ jobs:
     # checkout branch
     - uses: actions/checkout@main
 
-    - name: Get ReadyAPI
-      run: curl https://dl.eviware.com/ready-api/3.40.1.0/ReadyAPI-x64-3.40.1.exe -o ~/ReadyAPI-x64-3.40.1.exe
+    #- name: Get ReadyAPI
+    #  run: curl https://dl.eviware.com/ready-api/3.40.1.0/ReadyAPI-x64-3.40.1.exe -o ~/ReadyAPI-x64-3.40.1.exe
       
     - name: Get Install ReadyAPI
       run: echo "install ReadyAPI"
