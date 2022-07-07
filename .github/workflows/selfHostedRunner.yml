@@ -21,5 +21,5 @@ jobs:
       
     - name: Test 2
       working-directory: C:\Program Files\SmartBear\ReadyAPI-3.40.1\bin\
-      run: cmd /c "START /b testrunner.bat -r -a -j -f${WORKSPACE} "-RJUnit-Style HTML Report" -FXML "-EDefault environment" "C:\Work\CalcSoap-readyapi-project.xml""
+      run: cmd /c "testrunner.bat -r -a -j -f${WORKSPACE} "-RJUnit-Style HTML Report" -FXML "-EDefault environment" "C:\Work\CalcSoap-readyapi-project.xml""
 
