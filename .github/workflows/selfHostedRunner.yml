@@ -2,6 +2,8 @@ on: [push]
 
 name: self-hosted-example
 
+env:
+    OUTPUT_PATH: ${{ github.workspace }}
 jobs:
   simpleExample:
     runs-on: self-hosted
@@ -21,5 +23,5 @@ jobs:
       
     - name: Test 2
       working-directory: C:\Program Files\SmartBear\ReadyAPI-3.40.1\bin\
-      run: cmd /c "testrunner.bat -r -a -j -f${WORKSPACE} "-RJUnit-Style HTML Report" -FXML "-EDefault environment" "C:\Work\CalcSoap-readyapi-project.xml""
+      run: cmd /c "testrunner.bat -r -a -j -f${WORKSPACE} "-RJUnit-Style HTML Report" -FXML "-EDefault environment" ${{ env.OUTPUT_PATH }}"
 
