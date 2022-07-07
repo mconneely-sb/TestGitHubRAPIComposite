@@ -25,5 +25,5 @@ jobs:
       
     - name: Test 2
       working-directory: C:\Program Files\SmartBear\ReadyAPI-3.40.1\bin\
-      run: cmd /c "testrunner.bat -r -a -j -f${{ env.RAPI_PROJECT_PATH }}\reports "-RJUnit-Style HTML Report" -FXML "-EDefault environment" ${{ env.RAPI_PROJECT_PATH }}"
+      run: cmd /c "testrunner.bat -r -a -j -f${{ env.RAPI_PROJECT_PATH }} "-RJUnit-Style HTML Report" -FXML "-EDefault environment" ${{ env.RAPI_PROJECT_PATH }}"
 
