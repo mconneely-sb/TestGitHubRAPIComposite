@@ -1,5 +1,4 @@
- 
-name: self-hosted-example
+name: readyapi-testrunner
 
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -15,7 +14,7 @@ env:
     RAPI_PROJECT_PATH: ${{ github.workspace }}
     
 jobs:
-  simpleExample:
+  RunReadyApiTests:
     runs-on: self-hosted
     steps:
     # checkout branch
@@ -23,16 +22,22 @@ jobs:
 
     - name: Get ReadyAPI
       run: echo Get ReadyAPI Installer  
-    #  run: curl https://dl.eviware.com/ready-api/3.40.1.0/ReadyAPI-x64-3.40.1.exe -o ~/ReadyAPI-x64-3.40.1.exe
+    # run: curl https://dl.eviware.com/ready-api/3.40.1.0/ReadyAPI-x64-3.40.1.exe -o ~/ReadyAPI-x64-3.40.1.exe
       
     - name: Get Install ReadyAPI
       run: echo "Install ReadyAPI"
-      #  run: start /wait ReadyAPI-x64-3.40.1.exe -c
+    # run: start /wait ReadyAPI-x64-3.40.1.exe -c
       
-   # - name: Test 1
+   # - name: Run ReadyAPI Tests using a seperate bat file - probably not as flexible an approach, but you could run a sepetate file that stores ReadyAPI commands 
    #   working-directory: C:\Work
    #   run: ./rapi-test.bat
-      
-    - name: Test 2
+   
+    - name: Get ReadyAPI Floating License
+      run: echo "If using a floating license, get the license from license server (not appliable if using SmartBear Hosted SLM )"
+    
+    - name: Run ReadyAPI Tests
+      # navigate to the ReadyAPI Installation bin folder
       working-directory: C:\Program Files\SmartBear\ReadyAPI-3.40.1\bin\
+      # execute the ReadyAPI project stored in repository
+
       run: cmd /c "testrunner.bat -r -a -j -f${WORKSPACE} "-RJUnit-Style HTML Report" -FXML "-EDefault environment" ${{ env.RAPI_PROJECT_PATH }}"
