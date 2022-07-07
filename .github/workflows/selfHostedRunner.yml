@@ -3,7 +3,7 @@ on: [push]
 name: self-hosted-example
 
 env:
-    OUTPUT_PATH: ${{ github.workspace }}
+    RAPI_PROJECT_PATH: ${{ github.workspace }}
 jobs:
   simpleExample:
     runs-on: self-hosted
@@ -11,17 +11,19 @@ jobs:
     # checkout branch
     - uses: actions/checkout@main
 
-    #- name: Get ReadyAPI
+    - name: Get ReadyAPI
+      run: echo Get ReadyAPI Installer  
     #  run: curl https://dl.eviware.com/ready-api/3.40.1.0/ReadyAPI-x64-3.40.1.exe -o ~/ReadyAPI-x64-3.40.1.exe
       
     - name: Get Install ReadyAPI
-      run: echo "install ReadyAPI"
-    
+      run: echo "Install ReadyAPI"
+      #  run: start /wait ReadyAPI-x64-3.40.1.exe -c
+      
    # - name: Test 1
    #   working-directory: C:\Work
    #   run: ./rapi-test.bat
       
     - name: Test 2
       working-directory: C:\Program Files\SmartBear\ReadyAPI-3.40.1\bin\
-      run: cmd /c "testrunner.bat -r -a -j -f${WORKSPACE} "-RJUnit-Style HTML Report" -FXML "-EDefault environment" ${{ env.OUTPUT_PATH }}"
+      run: cmd /c "testrunner.bat -r -a -j -f${{ env.RAPI_PROJECT_PATH }}\reports "-RJUnit-Style HTML Report" -FXML "-EDefault environment" ${{ env.RAPI_PROJECT_PATH }}"
 
